@@ -1,9 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // 静态导出
-  trailingSlash: true, // 添加尾部斜杠
+  // 移除静态导出，支持动态功能
+  // output: 'export',
+  
+  // 启用实验性功能
+  experimental: {
+    appDir: true,
+  },
+  
+  // 图片优化
   images: {
-    unoptimized: true, // 禁用图片优化（静态导出需要）
+    unoptimized: false,
+  },
+  
+  // 环境变量
+  env: {
+    OPENAI_API_KEY: process.env.OPENAI_API_KEY,
+    GOOGLE_TRANSLATE_API_KEY: process.env.GOOGLE_TRANSLATE_API_KEY,
   },
 }
 

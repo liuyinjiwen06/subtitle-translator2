@@ -1,0 +1,12 @@
+{
+  "name": "subtitle-translator",
+  "production_branch": "main",
+  "framework": "nextjs",
+  "build_command": "npm run build",
+  "output_directory": "out",
+  "root_dir": "",
+  "compatibility_date": "2025-08-15",
+  "functions": {
+    "directory": "functions"
+  }
+}
