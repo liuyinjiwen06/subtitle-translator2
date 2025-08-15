@@ -25,7 +25,7 @@ export function ensureBrowserCompatibility() {
     // 确保FileReader存在
     if (typeof FileReader === 'undefined') {
       (window as any).FileReader = class FileReader {
-        onload: ((this: FileReader, ev: ProgressEvent<FileReader>) => any) | null = null;
+        onload: ((this: FileReader, ev: Event) => any) | null = null;
         readAsText(blob: Blob) {
           // 简单的polyfill实现
           setTimeout(() => {
